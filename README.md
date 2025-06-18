@@ -20,6 +20,7 @@ cd react-mapgl-sample
 ```
 
 #### Gitが使えない場合（ZIPダウンロード）
+<img width="624" alt="image" src="https://github.com/user-attachments/assets/ea498b6a-5ce8-44fd-9655-11c4b83762bd" />
 
 1. GitHubのリポジトリページで「Code」ボタンをクリック
 2. 「Download ZIP」を選択してダウンロード
@@ -44,8 +45,11 @@ cd C:\Users\[ユーザー名]\Downloads\react-mapgl-sample-main
 - **Prettier**: コードの自動フォーマット
 - **Tailwind CSS IntelliSense**: Tailwind CSSのクラス名補完
 
-VS Codeでプロジェクトを開いた際に、右下に表示される通知から「Install」をクリックするか、
+VS Codeでプロジェクトを開いた際に表示される通知から「Install」をクリックするか、
 拡張機能タブで「@recommended」と検索してインストールしてください。
+
+<img width="380" alt="image" src="https://github.com/user-attachments/assets/b2a8720d-6fef-4613-b6ea-46d68226bfb3" />
+
 
 ### 3. 依存関係のインストール
 
