@@ -15,7 +15,7 @@
 #### Gitが使える場合（推奨）
 
 ```bash
-git clone [リポジトリURL]
+git clone https://github.com/shinking02/react-mapgl-sample.git
 cd react-mapgl-sample
 ```
 
