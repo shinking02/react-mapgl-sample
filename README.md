@@ -10,19 +10,30 @@
 
 ## プロジェクトの開始方法
 
-### 1. 依存関係のインストール
+### 1. VS Code 拡張機能のインストール（推奨）
+
+このプロジェクトをVS Codeで開くと、以下の拡張機能のインストールが推奨されます
+
+- **ESLint**: コードの品質チェックとエラー検出
+- **Prettier**: コードの自動フォーマット
+- **Tailwind CSS IntelliSense**: Tailwind CSSのクラス名補完
+
+VS Codeでプロジェクトを開いた際に、右下に表示される通知から「Install」をクリックするか、
+拡張機能タブで「@recommended」と検索してインストールしてください。
+
+### 2. 依存関係のインストール
 
 ```bash
 npm install
 ```
 
-### 2. 開発サーバーの起動
+### 3. 開発サーバーの起動
 
 ```bash
 npm run dev
 ```
 
-### 3. ブラウザで確認
+### 4. ブラウザで確認
 
 開発サーバーが起動したら、ブラウザで以下のURLにアクセスしてください：
 
@@ -41,22 +52,61 @@ http://localhost:3000
 
 ## プロジェクト構成
 
+### 全体のディレクトリ構造
+
 ```
-src/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # アプリケーション全体のレイアウト
-│   └── page.tsx           # メインページ（地図を表示）
-├── components/
-│   ├── custom/
-│   │   ├── colorModeToggle.tsx  # ダークモード切り替えボタン
-│   │   ├── header.tsx           # ヘッダーコンポーネント
-│   │   ├── map.tsx              # 地図コンポーネント（メイン）
-│   │   └── themeProvider.tsx    # テーマプロバイダー
-│   └── ui/
-│       └── button.tsx           # UIボタンコンポーネント
-└── lib/
-    └── utils.ts                 # ユーティリティ関数
+react-mapgl-sample/
+├── .vscode/                    # VS Code設定ファイル
+├── public/                     # 静的ファイル（画像、JSONなど）
+│   └── geolonia-style.json    # 地図スタイル設定ファイル
+├── src/                       # ソースコード
+│   ├── app/                   # Next.js App Router
+│   │   ├── layout.tsx         # アプリケーション全体のレイアウト
+│   │   ├── page.tsx           # メインページ（地図を表示）
+│   │   ├── globals.css        # グローバルスタイル
+│   │   └── favicon.ico        # ファビコン
+│   ├── components/
+│   │   ├── custom/
+│   │   │   ├── colorModeToggle.tsx  # ダークモード切り替えボタン
+│   │   │   ├── header.tsx           # ヘッダーコンポーネント
+│   │   │   ├── map.tsx              # 地図コンポーネント（メイン）
+│   │   │   └── themeProvider.tsx    # テーマプロバイダー
+│   │   └── ui/
+│   │       └── button.tsx           # UIボタンコンポーネント
+│   └── lib/
+│       └── utils.ts                 # ユーティリティ関数
+├── .gitignore                  # Gitで管理しないファイルの設定
+├── CLAUDE.md                   # AI開発アシスタント用の設定
+├── README.md                   # このファイル
+├── components.json             # shadcn/ui コンポーネント設定
+├── eslint.config.mjs          # ESLint設定（コード品質チェック）
+├── next-env.d.ts              # Next.js TypeScript型定義
+├── next.config.ts             # Next.js設定ファイル
+├── package.json               # プロジェクト情報と依存関係
+├── package-lock.json          # 依存関係の詳細なバージョン情報
+├── postcss.config.mjs         # PostCSS設定（CSS処理）
+└── tsconfig.json              # TypeScript設定
 ```
+
+### 各ファイルの役割
+
+#### 設定ファイル
+
+- **package.json**: プロジェクトの基本情報、依存関係、スクリプトを定義
+- **tsconfig.json**: TypeScriptのコンパイル設定
+- **next.config.ts**: Next.jsの動作設定
+- **eslint.config.mjs**: コード品質をチェックするESLintの設定
+- **postcss.config.mjs**: CSSの処理設定（Tailwind CSSの適用など）
+
+#### スタイル・UI関連
+
+- **components.json**: shadcn/uiコンポーネントライブラリの設定
+- **src/app/globals.css**: アプリケーション全体に適用されるスタイル
+
+#### 静的ファイル
+
+- **public/**: ブラウザから直接アクセスできるファイルを配置
+- **public/geolonia-style.json**: 地図の見た目を定義するスタイルファイル
 
 ## 地図をカスタマイズする方法
 
